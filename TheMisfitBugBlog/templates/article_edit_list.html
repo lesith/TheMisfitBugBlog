@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}The Misfit But | Edit Articles{% endblock %}
+
+{% block content %}
+
+    <br />
+    <h2>Manage Articles</h2>
+    <br />
+    <p><a href="{% url 'article_create' %}" class="btn btn-primary btn-large">Create New</a></p>
+
+    <table class="table table-bordered table-hover table-sm table-dark" style="text-align:center">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Last Updated</th>
+                <th scope="col">Featured</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+
+        {% for article in object_list %}
+        <tbody>
+            <tr>
+                <th scope="row">{{ article.title }}</th>
+                <td>{{ article.author|capfirst }}</td>
+                <td>{{ article.last_updated }}</td>
+                {% if article.featured == True %}
+                    <td>Yes</td>
+                {% else %}
+                    <td>No</td>
+                {% endif %}
+                <td>
+                    <div>
+                        <a href="{% url 'article_update' pk=article.pk %}"><button type="button" class="btn btn-secondary btn-sm">Edit</button></a>
+                        <a href="{% url 'article_delete' pk=article.pk %}"><button type="button" class="btn btn-danger btn-sm">Delete</button></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+    <!--Pagination-->
+    {% if is_paginated %}
+        <nav>
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li><a href="/articles/edit?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="/articles/edit?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li><a href="/articles/edit?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+
+{% endblock %}
