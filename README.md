@@ -10,7 +10,7 @@ Features:
 * Upload an image for each post (uploads are stored in upload-date-wise organized folders in the server storage)
 * Managing Posts is limited to logged in users
 
-Deployment Instructions:
+Generic Deployment Instructions:
 * https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
 
 Required Packages:
