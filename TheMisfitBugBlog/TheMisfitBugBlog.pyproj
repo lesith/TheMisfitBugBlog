@@ -59,8 +59,6 @@
     <Compile Include="TheMisfitBugBlog\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="accounts\templates\accounts\index.html" />
-    <Content Include="articles\templates\articles\index.html" />
     <Content Include="media\default.png" />
     <Content Include="requirements.txt" />
     <Content Include="templates\article_create.html" />
@@ -77,12 +75,8 @@
   <ItemGroup>
     <Folder Include="accounts\" />
     <Folder Include="accounts\migrations\" />
-    <Folder Include="accounts\templates\" />
-    <Folder Include="accounts\templates\accounts\" />
     <Folder Include="articles\" />
     <Folder Include="articles\migrations\" />
-    <Folder Include="articles\templates\" />
-    <Folder Include="articles\templates\articles\" />
     <Folder Include="media\" />
     <Folder Include="static\" />
     <Folder Include="templates\" />
