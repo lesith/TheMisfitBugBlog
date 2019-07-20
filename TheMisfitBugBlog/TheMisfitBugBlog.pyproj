@@ -62,6 +62,7 @@
   <ItemGroup>
     <Content Include="media\default.png" />
     <Content Include="requirements.txt" />
+    <Content Include="templates\about.html" />
     <Content Include="templates\article_create.html" />
     <Content Include="templates\article_delete.html" />
     <Content Include="templates\article_detail.html" />

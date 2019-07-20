@@ -13,7 +13,7 @@
 
     <style type="text/css">
         body { background: #23272A !important; } /* Override Default CSS */
-        p, h1, h2, h3, h4, label, td, th { color: #99AAB5 !important; }
+        p, h1, h2, h3, h4, h5, h6, label, td, th { color: #99AAB5 !important; }
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,6 +27,7 @@
           {% if perms.user %}
             <a class="nav-item nav-link" href="{% url 'article_edit_list' %}">Manage</a>
           {% endif %}
+          <a class="nav-item nav-link active" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
         </div>
       </div>
         {% include 'loginpartial.html' %}

@@ -31,3 +31,22 @@ class Article(models.Model):
     # Return Article Body Preview
     def snippet(self):
         return self.body[:50] + '...'    # First 50 chars plus 3 dots at the end
+
+# Comments Model
+class Comment(models.Model):
+    article = models.ForeignKey(Article, default=None, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50, default=None, blank=True, null=True)
+    comment = models.TextField()
+    # Active/Inactive Choice for Comment
+    ACTIVE_INACTIVE_CHOICES = [
+    (True, 'Active'),
+    (False, 'Inactive'),
+    ]
+    comment_status = models.BooleanField(
+        choices=ACTIVE_INACTIVE_CHOICES,
+        default=False,
+    )
+    # Return Comment
+    def __str__(self):
+        return str(self.comment)

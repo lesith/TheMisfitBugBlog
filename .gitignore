@@ -339,3 +339,5 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /TheMisfitBugBlog/env
+/TheMisfitBugBlog/.vscode
+/.vscode

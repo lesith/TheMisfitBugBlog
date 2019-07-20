@@ -7,6 +7,11 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.shortcuts import render
+
+# The About Page
+def about(request):
+	return render(request, 'about.html')
 
 # Creating an Article
 @method_decorator(login_required(login_url='/login/'), name='dispatch')
