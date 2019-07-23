@@ -16,3 +16,7 @@ Generic Deployment Instructions:
 Required Packages:
 * django-cleanup
 * pillow
+* django-recaptcha
+
+Instructions for setting up reCAPTCHA:
+* https://github.com/praekelt/django-recaptcha
