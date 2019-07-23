@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'articles',
     'django_cleanup',
     'captcha',
+    'tinymce',
 ]
 
 # Middleware framework

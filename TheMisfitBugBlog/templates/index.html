@@ -9,17 +9,19 @@
         <h1 style="text-align:center">The Misfit Bug</h1>
     </div>
 
-    <div class="row">
-        {% for article in object_list %}
-            {% if article.featured == True %}
-                <div class="col-md-4">
-                    <h2>{{ article.title }}</h2>
-                    <p class="lead">{{ article.snippet }}</p>
-                    <p class="font-italic">{{ article.last_updated }} by - {{ article.author|capfirst }}</p>
-                    <p><a class="btn btn-outline-primary" href="{% url 'article_detail' pk=article.pk %}">Read More</a></p>
-                </div>
-            {% endif %}
-        {% endfor %}
+    <div class="container">
+        <div class="row">
+            {% for article in object_list %}
+                {% if article.featured == True %}
+                    <div class="col-md-4">
+                        <h2>{{ article.title }}</h2>
+                        <p class="lead">{{ article.body|safe|truncatewords:50 }}</p>
+                        <p class="font-italic">{{ article.last_updated }} by - {{ article.author|capfirst }}</p>
+                        <p><a class="btn btn-outline-primary" href="{% url 'article_detail' pk=article.pk %}">Read More</a></p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 
 {% endblock %}
