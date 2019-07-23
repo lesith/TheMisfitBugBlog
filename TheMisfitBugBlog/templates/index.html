@@ -15,7 +15,7 @@
                 {% if article.featured == True %}
                     <div class="col-md-4">
                         <h2>{{ article.title }}</h2>
-                        <p class="lead">{{ article.body|safe|truncatewords:50 }}</p>
+                        <p class="lead">{{ article.body|safe|truncatechars:100 }}</p>
                         <p class="font-italic">{{ article.last_updated }} by - {{ article.author|capfirst }}</p>
                         <p><a class="btn btn-outline-primary" href="{% url 'article_detail' pk=article.pk %}">Read More</a></p>
                     </div>

@@ -10,10 +10,9 @@
         <br />
         <img src="{{ object.image.url }}" class="img-fluid" alt="Responsive image">
         <br /><br />
-
         <div class="container">
             <blockquote class="blockquote">
-              <p class="lead">{{ object.body|safe|linebreaksbr}}</p>
+              <p class="lead">{{ object.body|safe }}</p>
               <footer class="blockquote-footer">{{ object.last_updated }} by - <cite title="Source Title" style="font-weight:bolder">{{ object.author|capfirst }}</cite></footer>
             </blockquote>
         </div>

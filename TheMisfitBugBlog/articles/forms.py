@@ -1,6 +1,6 @@
 from django import forms
 from . import models
-from tinymce.widgets import TinyMCE
+#from tinymce.widgets import TinyMCE
 
 class ArticleForm(forms.ModelForm):
     class Meta:
@@ -14,7 +14,7 @@ class ArticleForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'required': True}),
             #'body': forms.Textarea(attrs={'class': 'form-control', 'required': True}),
-            'body': TinyMCE(attrs={'class': 'form-control', 'required': True}),
+            #'body': TinyMCE(attrs={'class': 'form-control'}),
             'image': forms.FileInput(attrs={'class': 'form-control', 'required': False}),
             'featured': forms.Select(attrs={'class': 'form-control', 'required': False})
             }
