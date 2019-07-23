@@ -16,3 +16,9 @@ Generic Deployment Instructions:
 Required Packages:
 * django-cleanup
 * pillow
+* django-recaptcha
+
+Instructions for setting up reCAPTCHA:
+* Register for Google reCAPTCHA
+* change RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123' and RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456' with the values obtained during registration in settings.py
+* https://github.com/praekelt/django-recaptcha
