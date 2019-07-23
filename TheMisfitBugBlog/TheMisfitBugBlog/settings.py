@@ -22,6 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '85c20486-f5d8-43a2-a3c5-379f398e4935'
 
+# reCAPTCHA Keys
+RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123'  # Replace with Site Key 
+RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456'  # Replace with Secret Key
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -40,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'articles',
     'django_cleanup',
+    'captcha',
 ]
 
 # Middleware framework
