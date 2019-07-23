@@ -17,8 +17,16 @@ Required Packages:
 * django-cleanup
 * pillow
 * django-recaptcha
+* tinymce
 
 Instructions for setting up reCAPTCHA:
 * Register for Google reCAPTCHA
 * change RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123' and RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456' with the values obtained during registration in settings.py
 * https://github.com/praekelt/django-recaptcha
+
+Rich Text Formatting using TinyMCE
+* https://github.com/aljosa/django-tinymce
+* Implemented TinyMCE Plugins: "link image imagetools media emoticons advcode advlist anchor autolink charmap directionality"
+* More plugins can be added by adding the plugins to the tinymce.init section of the base.html <header>
+* please create an account at https://www.tiny.cloud and register domain to obtain API Key and insert the API key into "{no-api-key}" of the base.html <header>
+  "<script src="https://cdn.tiny.cloud/1/{no-api-key}/tinymce/5/tinymce.min.js"></script>"
