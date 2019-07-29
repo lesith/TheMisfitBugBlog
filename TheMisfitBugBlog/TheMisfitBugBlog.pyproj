@@ -47,6 +47,9 @@
     </Compile>
     <Compile Include="articles\migrations\__init__.py" />
     <Compile Include="articles\models.py" />
+    <Compile Include="articles\serializers.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="articles\tests.py" />
     <Compile Include="articles\urls.py">
       <SubType>Code</SubType>

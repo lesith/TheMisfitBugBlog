@@ -8,6 +8,8 @@ from django.views.generic.edit import DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import render
+from rest_framework import viewsets
+from . import serializers
 
 # The About Page
 def about(request):
@@ -34,7 +36,6 @@ class ArticleListView(ListView):
 class FeaturedArticleListView(ListView):
     model = models.Article
     template_name = 'index.html'
-    paginate_by = 10  # Pagination
 
 # Article Detailed View
 class ArticleDetailView(DetailView):
@@ -62,3 +63,8 @@ class ArticleDeleteView(DeleteView):
     model = models.Article
     template_name = 'article_delete.html'
     success_url = '/articles/edit/' # Redirect to Edit List
+
+# Comments API
+class CommentView(viewsets.ModelViewSet):
+    queryset = models.Comment.objects.all()
+    serializer_class = serializers.CommentSerializer
