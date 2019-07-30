@@ -18,6 +18,7 @@ Required Packages:
 * pillow
 * django-recaptcha
 * tinymce
+* djangorestframework
 
 Instructions for setting up reCAPTCHA:
 * Register for Google reCAPTCHA
