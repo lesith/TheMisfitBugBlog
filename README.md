@@ -17,7 +17,7 @@ Required Packages:
 * django-cleanup
 * pillow
 * django-recaptcha
-* tinymce
+* django-tinymce
 * djangorestframework
 
 Instructions for setting up reCAPTCHA:
