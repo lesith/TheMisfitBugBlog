@@ -341,3 +341,4 @@ healthchecksdb
 /TheMisfitBugBlog/env
 /TheMisfitBugBlog/.vscode
 /.vscode
+.DS_Store
